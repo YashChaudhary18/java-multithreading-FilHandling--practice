@@ -1,14 +1,14 @@
-# java-multithreading-FilHandling--practice
-
 Java Multithreading & File Handling Practice
 
-This repository contains practice programs demonstrating Java Multithreading concepts and File Handling.
+This repository contains practice programs demonstrating Java Multithreading concepts, File Handling operations, and a simple Java logging mini project.
 
-Each concept is organized in a separate folder with its own example and explanation.
+The programs are organized into folders based on the concept being practiced.
 
 ---
 
-Topics Covered :
+Topics Covered
+
+Multithreading Practicals
 
 1. Thread Creation
 
@@ -34,7 +34,7 @@ Two threads running simultaneously:
 
 Demonstrates "Thread.sleep()".
 
-A thread prints numbers 1 to 5 with a 1 second pause between each number.
+A thread prints numbers 1 → 5 with a 1 second pause between each number.
 
 ---
 
@@ -47,26 +47,70 @@ Two threads perform:
 - Deposit
 - Withdraw
 
-"synchronized" keyword ensures the balance remains correct and prevents race conditions.
+"synchronized" ensures the balance remains correct.
 
 ---
 
-5. File Handling
+File Handling Practicals
 
-Demonstrates writing data into a file.
+5. Write File
 
-Student details are written into:
+Write student details into:
 
 students.txt
 
 ---
 
-Project Structure :
+6. Read File
+
+Read and print the contents of:
+
+students.txt
+
+---
+
+7. Append File
+
+Add new student records to an existing file without deleting previous data.
+
+---
+
+8. CSV File Reader
+
+Read data from:
+
+students.csv
+
+and print all records.
+
+---
+
+Mini Project
+
+9. Log System
+
+A simple logging system that records actions in:
+
+app.log
+
+Example log entries:
+
+Employee added
+Employee deleted
+
+Each action is stored with a timestamp.
+
+---
+
+Project Structure
 
 java-multithreading-practice
 │
-├── FillHandling
+├── FileHandling
 │   ├── WriteStudentFile.java
+│   ├── ReadStudentFile.java
+│   ├── AppendStudentFile.java
+│   ├── CSVFileReader.java
 │   └── Readme.md
 │
 ├── MultipleThreads
@@ -86,11 +130,15 @@ java-multithreading-practice
 │   ├── BankAccountExample.java
 │   └── Readme.md
 │
+├── Logging
+│   ├── LogSystem.java
+│   └── Readme.md
+│
 └── README.md
 
 ---
 
-Technologies Used :
+Technologies Used
 
 - Java
 - Multithreading
@@ -99,9 +147,8 @@ Technologies Used :
 
 ---
 
-Purpose of This Repository :
+Purpose of This Repository
 
-This repository is created to practice core Java concepts related to multithreading and file handling.
+This repository is created to practice core Java concepts related to multithreading and file handling and to implement small practical programs for better understanding of concurrent programming and file operations.
 
-These concepts are commonly used in Java backend development and concurrent programming.
-
+---
