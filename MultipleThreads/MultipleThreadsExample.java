@@ -1,3 +1,7 @@
+/* Multiple Threads
+Create two threads:
+Thread 1 → print even numbers
+Thread 2 → print odd numbers*/
 package MultipleThreads;
 
 // Generic thread class
