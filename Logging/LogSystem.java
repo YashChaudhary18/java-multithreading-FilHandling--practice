@@ -1,36 +1,37 @@
 package Logging;
 
-
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class LogSystem {
 
-    // Method to write log
-    public static void writeLog(String action) {
+    private static final String FILE_NAME = "app.log";
 
-        try {
+    // Synchronized method to make logging thread-safe
+    public static synchronized void writeLog(String level, String action) {
 
-            FileWriter writer = new FileWriter("app.log", true);
+        // Try-with-resources ensures auto-close
+        try (FileWriter writer = new FileWriter(FILE_NAME, true)) {
 
-            String log = LocalDateTime.now() + " - " + action + "\n";
+            String log = LocalDateTime.now() 
+                    + " [" + level + "] "
+                    + "[" + Thread.currentThread().getName() + "] "
+                    + action + "\n";
 
             writer.write(log);
 
-            writer.close();
-
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println("Logging failed: " + e.getMessage());
         }
     }
 
     public static void main(String[] args) {
 
-        // Example actions
-        writeLog("Employee added");
-        writeLog("Employee deleted");
+        // Example logs
+        writeLog("INFO", "Employee added");
+        writeLog("WARNING", "Employee deleted");
+        writeLog("ERROR", "Database connection failed");
 
         System.out.println("Actions logged successfully.");
     }
