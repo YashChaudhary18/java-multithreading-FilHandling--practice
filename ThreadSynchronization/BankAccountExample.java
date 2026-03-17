@@ -1,3 +1,8 @@
+/* Create BankAccount class
+Two threads:
+withdraw()
+deposit()
+Ensure balance remains correct using synchronized.*/
 package ThreadSynchronization;
 
 
