@@ -1,55 +1,44 @@
 package MultipleThreads;
 
-// Thread for even numbers
-class EvenThread extends Thread {
+// Generic thread class
+class NumberThread extends Thread {
 
+    private String type;
+
+    // Constructor to define thread type (Even / Odd)
+    NumberThread(String type) {
+        this.type = type;
+    }
+
+    @Override
     public void run() {
 
-        for (int i = 1; i <= 10; i++) {
+        // Start from correct number to avoid waste
+        int start = type.equals("Even") ? 2 : 1;
 
-            if (i % 2 == 0) {
-                System.out.println("Even Thread: " + i);
-            }
+        for (int i = start; i <= 10; i += 2) {
+
+            // Print thread name + value
+            System.out.println(type + " Thread: " + i);
 
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
-                System.out.println(e);
+                System.out.println("Thread interrupted: " + e);
             }
         }
     }
 }
-
-
-// Thread for odd numbers
-class OddThread extends Thread {
-
-    public void run() {
-
-        for (int i = 1; i <= 10; i++) {
-
-            if (i % 2 != 0) {
-                System.out.println("Odd Thread: " + i);
-            }
-
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                System.out.println(e);
-            }
-        }
-    }
-}
-
 
 public class MultipleThreadsExample {
 
     public static void main(String[] args) {
 
-        EvenThread t1 = new EvenThread();
-        OddThread t2 = new OddThread();
+        // Create threads with different roles
+        NumberThread evenThread = new NumberThread("Even");
+        NumberThread oddThread = new NumberThread("Odd");
 
-        t1.start();
-        t2.start();
+        evenThread.start();
+        oddThread.start();
     }
 }
