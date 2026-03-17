@@ -1,3 +1,7 @@
+/* Thread Sleep Example
+Create thread printing:
+1 → 5
+Pause 1 second between numbers.*/
 package ThreadSleep;
 
 
