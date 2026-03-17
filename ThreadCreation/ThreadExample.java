@@ -1,16 +1,24 @@
 package ThreadCreation;
 
+// This class extends Thread to create a custom thread
 class NumberThread extends Thread {
 
+    // The run() method contains the task that the thread will execute
+    @Override
     public void run() {
 
+        // Loop to print numbers from 1 to 10
         for (int i = 1; i <= 10; i++) {
-            System.out.println("Thread Class: " + i);
+
+            // Print current thread name along with number
+            System.out.println(Thread.currentThread().getName() + ": " + i);
 
             try {
+                // Pause execution for 500 milliseconds
                 Thread.sleep(500);
             } catch (InterruptedException e) {
-                System.out.println(e);
+                // Handle interruption exception
+                System.out.println("Thread interrupted: " + e);
             }
         }
     }
@@ -18,10 +26,4 @@ class NumberThread extends Thread {
 
 public class ThreadExample {
 
-    public static void main(String[] args) {
-
-        NumberThread t1 = new NumberThread();
-
-        t1.start(); // start thread
-    }
-}
+    public static void main(String[]
