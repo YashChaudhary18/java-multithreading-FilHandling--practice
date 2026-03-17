@@ -1,3 +1,10 @@
+/*  Log System
+Create simple log system:
+Every action writes into:
+app.log
+Example:
+Employee added
+Employee deleted*/
 package Logging;
 
 import java.io.FileWriter;
