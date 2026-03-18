@@ -1,35 +1,33 @@
-Java Thread Synchronization Example
+Java Thread Synchronization – Bank Account
 
 Overview :
 
-This program demonstrates thread synchronization in Java using the "synchronized" keyword.
+This program demonstrates thread synchronization using a BankAccount example.
 
-Two threads interact with the same "BankAccount" object:
-
-- One thread deposits money
-- Another thread withdraws money
-
-Synchronization ensures that only one thread modifies the balance at a time.
+Two threads perform deposit and withdrawal operations on a shared account.
 
 ---
 
-Steps :
+Files :
 
-1. Create a "BankAccount" class with a balance variable.
-2. Create synchronized methods:
-   - "deposit()"
-   - "withdraw()"
-3. Create two threads:
-   - "DepositThread"
-   - "WithdrawThread"
-4. Both threads operate on the same bank account object.
-5. Use the "synchronized" keyword to ensure thread-safe operations.
+BankAccount.java → Shared resource
+DepositThread.java → Deposit logic
+WithdrawThread.java → Withdraw logic
+BankAccountExample.java → Main program
+
+---
+
+Features :
+
+- Prevent race conditions
+- Maintain correct balance
+- Multiple thread operations
 
 ---
 
 Concepts Used :
 
 - Java Multithreading
-- Thread Synchronization
-- "synchronized" keyword
-- Race condition prevention
+- synchronized keyword
+- Shared resources
+- Thread safety
